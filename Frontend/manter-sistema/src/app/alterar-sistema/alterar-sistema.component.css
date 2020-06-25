@@ -1,0 +1,52 @@
+form{
+    margin: 15px;
+}
+legend{
+    color: limegreen;
+}
+
+.lab{
+    color: black;
+}
+
+.lab2{
+    padding-left: 6px;
+}
+
+.obg{
+    color: red;
+}
+
+td{
+    width: 600px;
+    padding-right: 15px;
+}
+
+.campo-desab{
+    width: 100%;
+}
+
+.campo-hab{
+    width: 100%;
+}
+
+.borda{
+    border-left: 2px solid black;
+    padding-left: 5px;
+}
+
+.elevacao{
+    padding-bottom: 50px;
+}
+
+.texto{
+    color: limegreen;
+}
+
+.tamanho{
+    color: red;
+}
+
+.qtd{
+    color: blue;
+}

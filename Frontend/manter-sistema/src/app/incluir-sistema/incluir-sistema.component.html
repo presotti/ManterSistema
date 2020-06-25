@@ -1,0 +1,100 @@
+<app-header [alterarHeader]="alteracao"></app-header>
+<form [formGroup]="formulario">
+    <fieldset>
+        <legend>Dados do Sistema</legend>
+        <table>
+            <tr>
+                <td>
+                    <mat-form-field class="campo-desab">
+                        <mat-label class="lab">Descrição <span class="obg">*</span></mat-label>
+                        <input matInput disabled >
+                    </mat-form-field>
+                </td>
+                <td>
+                    <mat-form-field class="campo-hab">
+                        <input matInput class="borda" formControlName="descricao">
+                    </mat-form-field>
+                    <mat-error *ngIf="formulario.get('descricao').hasError('required') && formulario.get('descricao').touched">
+                        <strong>
+                            Campo obrigatório
+                        </strong>    
+                    </mat-error>
+                    <mat-error *ngIf="formulario.get('descricao').hasError('minlength') && formulario.get('descricao').touched">
+                        <strong>
+                            <i>
+                                Campo não pode possuir menos que 5 caracteres
+                            </i>
+                        </strong>
+                    </mat-error>
+                    <mat-error *ngIf="formulario.get('descricao').hasError('maxlength') && formulario.get('descricao').touched">
+                        <strong>
+                            <i>
+                                Campo não pode possuir mais que 100 caracteres
+                            </i>
+                        </strong>
+                    </mat-error>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <mat-form-field class="campo-desab">
+                        <mat-label class="lab">Sigla <span class="obg">*</span></mat-label>
+                        <input matInput disabled>
+                    </mat-form-field>
+                </td>
+                <td>
+                    <mat-form-field class="campo-hab">
+                        <input matInput class="borda" formControlName="sigla">
+                    </mat-form-field>
+                    <mat-error *ngIf="formulario.get('sigla').hasError('required') && formulario.get('sigla').touched">
+                        <b>
+                            Campo obrigatório
+                        </b>    
+                    </mat-error>
+                    <mat-error *ngIf="formulario.get('sigla').hasError('minlength') && formulario.get('sigla').touched">
+                        <b>
+                            <i>
+                                Campo não pode possuir menos que 2 caracteres
+                            </i>
+                        </b>   
+                    </mat-error>
+                    <mat-error *ngIf="formulario.get('sigla').hasError('maxlength') && formulario.get('sigla').touched">
+                        <b>
+                            <i>
+                                Campo não pode possuir mais que 10 caracteres
+                            </i>
+                        </b>    
+                    </mat-error>
+                    
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <mat-form-field class="campo-desab">
+                        <mat-label class="lab">Email de atendimento do sistema</mat-label>
+                        <input matInput disabled>
+                    </mat-form-field>
+                </td>
+                <td>
+                    <mat-form-field class="campo-hab">
+                        <input matInput class="borda" formControlName="email">
+                    </mat-form-field>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <mat-form-field class="campo-desab">
+                        <mat-label class="lab">URL</mat-label>
+                        <input matInput disabled>
+                    </mat-form-field>
+                </td>
+                <td>
+                    <mat-form-field class="campo-hab">
+                        <input matInput class="borda" formControlName="url">
+                    </mat-form-field>
+                </td>
+            </tr>
+        </table>
+    </fieldset>
+</form>
+<app-footer [alterarFooter]="alteracao" [form]="formulario"></app-footer>

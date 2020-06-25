@@ -1,0 +1,24 @@
+{
+    "configurations": [
+        {
+            "type": "java",
+            "name": "Spring Boot-SistemaApplication<sistema>",
+            "request": "launch",
+            "cwd": "${workspaceFolder}",
+            "console": "internalConsole",
+            "mainClass": "mantersistema.sistema.SistemaApplication",
+            "projectName": "sistema",
+            "args": ""
+        },
+        {
+            "type": "java",
+            "name": "Spring Boot-DemoApplication<sistemaapi>",
+            "request": "launch",
+            "cwd": "${workspaceFolder}",
+            "console": "internalConsole",
+            "mainClass": "sistema.sistemaapi.DemoApplication",
+            "projectName": "sistemaapi",
+            "args": ""
+        }
+    ]
+}

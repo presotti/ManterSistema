@@ -1,0 +1,40 @@
+form{
+    margin: 5px;
+}
+legend{
+    color: limegreen;
+}
+
+.lab{
+    color: black;
+}
+
+.obg{
+    color: red;
+}
+
+.tbFiltro{
+    width: 600px;
+    padding-right: 15px;
+}
+
+.campo-desab{
+    width: 100%;
+}
+
+.campo-hab{
+    width: 100%;
+}
+
+.borda{
+    border-left: 2px solid black;
+    padding-left: 5px;
+}
+
+.form-tabela{
+    margin: 5px;
+}
+
+.dados{
+    width: 100%;
+}

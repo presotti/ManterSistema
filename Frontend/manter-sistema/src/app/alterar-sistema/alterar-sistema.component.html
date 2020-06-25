@@ -1,0 +1,160 @@
+<app-header [alterarHeader]="alteracao"></app-header>
+<form [formGroup]="formulario">
+    <div>
+        <fieldset>
+            <legend>Dados do Sistema</legend>
+            <table>
+                <tr>
+                    <td>
+                        <mat-form-field class="campo-desab">
+                            <mat-label class="lab">Descrição <span class="obg">*</span></mat-label>
+                            <input matInput disabled>
+                        </mat-form-field>
+                    </td>
+                    <td>
+                        <mat-form-field class="campo-hab">
+                            <input matInput class="borda" disabled [value]="sistema.descricao" >
+                        </mat-form-field>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <mat-form-field class="campo-desab">
+                            <mat-label class="lab">Sigla <span class="obg">*</span></mat-label>
+                            <input matInput disabled>
+                        </mat-form-field>
+                    </td>
+                    <td>
+                        <mat-form-field class="campo-hab">
+                            <input matInput disabled class="borda" [value]="sistema.sigla | uppercase">
+                        </mat-form-field>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <mat-form-field class="campo-desab">
+                            <mat-label class="lab">Email de atendimento do sistema</mat-label>
+                            <input matInput disabled>
+                        </mat-form-field>
+                    </td>
+                    <td>
+                        <mat-form-field class="campo-hab">
+                            <input matInput disabled class="borda" [value]="sistema.email">
+                        </mat-form-field>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <mat-form-field class="campo-desab">
+                            <mat-label class="lab">URL</mat-label>
+                            <input matInput disabled>
+                        </mat-form-field>
+                    </td>
+                    <td>
+                        <mat-form-field class="campo-hab">
+                            <input matInput class="borda" formControlName="url" [(ngModel)]="sistema.url">
+                        </mat-form-field>
+                    </td>
+                </tr>
+            </table>
+        </fieldset>
+    </div>
+    <div>
+        <fieldset>
+            <legend>Controle do Sisitema</legend>
+            <table>
+                <tr>
+                    <td>
+                        <mat-form-field class="campo-desab">
+                            <mat-label class="lab">Status <span class="obg">*</span></mat-label>
+                            <input matInput disabled>
+                        </mat-form-field>
+                    </td>
+                    <td>
+                        <mat-form-field class="campo-hab">
+                            <mat-select class="borda" [value]="sistema.status" disabled>
+                                <mat-option value="Ativado">
+                                    Ativado
+                                </mat-option>
+                                <mat-option value="Cancelado">
+                                    Cancelado
+                                </mat-option>
+                            </mat-select>
+                        </mat-form-field>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <mat-form-field class="campo-desab">
+                            <mat-label class="lab">Usuário responsável pela última alteração</mat-label>
+                            <input matInput disabled>
+                        </mat-form-field>
+                    </td>
+                    <td>
+                        <mat-form-field class="campo-hab">
+                            <input matInput disabled class="borda">
+                        </mat-form-field>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <mat-form-field class="campo-desab">
+                            <mat-label class="lab">Data da última alteração</mat-label>
+                            <input matInput disabled>
+                        </mat-form-field>
+                    </td>
+                    <td>
+                        <mat-form-field class="campo-hab">
+                            <input matInput disabled class="borda" [value]="sistema.dataAtualizacao | date: 'd/LLLL/y   HH:mm:ss '">
+                        </mat-form-field>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <mat-form-field class="campo-desab elevacao">
+                            <mat-label class="lab">Justificativa da última alteração</mat-label>
+                            <input matInput disabled>
+                        </mat-form-field>
+                    </td>
+                    <td>
+                        <mat-form-field class="campo-hab">
+                            <textarea matInput cdkTextareaAutosize cdkAutosizeMinRows="4" cdkAutosizeMaxRows="4" class="borda" disabled [value]="sistema.justificativa"></textarea>
+                        </mat-form-field>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <mat-form-field class="campo-desab elevacao">
+                            <mat-label class="lab">Nova justificativa de alteração</mat-label>
+                            <input matInput disabled>
+                        </mat-form-field>
+                    </td>
+                    <td>
+                        <mat-form-field class="campo-hab">
+                            <textarea  class="lab2" (keyup)="mudaCor($event.target.value.length)" matInput #message cdkTextareaAutosize cdkAutosizeMinRows="4" 
+                            cdkAutosizeMaxRows="4" maxlength="200" class="borda" formControlName="justificativa"></textarea>
+                            <mat-hint align="end">
+                                <span class="texto">Máximo de caracteres disponível: </span>
+                                <span [style.color]="cor" >{{message.value.length}}</span> / 
+                                <span class="tamanho">200</span> <br>
+                            </mat-hint>
+                            <mat-error *ngIf="formulario.get('justificativa').hasError('required')">
+                                <strong>
+                                    Campo Obrigatório
+                                </strong>
+                            </mat-error>
+                            <mat-error *ngIf="formulario.get('justificativa').hasError('minlength')">
+                                <strong>
+                                    <i>
+                                        Deve possuir mais de cinco cacteres
+                                    </i>
+                                </strong>    
+                            </mat-error>
+                        </mat-form-field>
+                    </td>
+                </tr>
+            </table>
+        </fieldset>
+    </div>
+</form>
+<app-footer [alterarFooter]="alteracao" [form]="formulario"></app-footer>

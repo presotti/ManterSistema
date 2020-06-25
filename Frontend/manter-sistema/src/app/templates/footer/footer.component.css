@@ -1,0 +1,57 @@
+.footer1{
+    background-color: lightgray;
+    display: flex;
+    justify-content: space-between;
+    height: 35px ;
+}
+
+.footer2{
+    background-color: lightgray;
+    display: flex;
+    justify-content: flex-end;
+    height: 35px ;
+}
+
+
+a{
+    text-decoration: none;
+    display: flex;
+}
+
+.funcao1{
+    font-size: 20px;
+    color: limegreen;
+    padding-right: 5px;
+    padding-left: 2px;
+}
+
+.funcao1-5{
+    font-size: 20px;
+    color: limegreen;
+    padding-top: 2px;
+    padding-right: 5px;
+    padding-left: 2px;
+}
+
+.icon1{
+    color: green;
+    margin-top: 1px;
+}
+
+.funcao2{
+    font-size: 20px;
+    color: limegreen;
+    padding-left: 15px;
+}
+
+.icon2{
+    color: green;
+    margin-top: 3px;
+}
+
+button{
+    border: none;
+    display: flex;
+    background-color: lightgray;
+    outline: none;   
+}

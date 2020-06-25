@@ -1,0 +1,35 @@
+<mat-toolbar  *ngIf="alterarFooter === true" class="footer1">
+    <a routerLink="" style="cursor: pointer;">
+        <mat-icon class="icon1">
+            reply
+        </mat-icon>
+        <span class="funcao1" >Voltar</span>
+    </a> 
+    <button (click)="SalvarOuAlterar()" *ngIf="form.valid" style="cursor: pointer;">
+        <i class="funcao1-5">Salvar</i> 
+        <mat-icon class="icon1">
+            save
+        </mat-icon>
+    </button>
+</mat-toolbar>
+<mat-toolbar  *ngIf="alterarFooter === false" class="footer2">
+    <a (click)="pesquisar()" style="cursor: pointer;">
+        <span class="funcao2" >Pesquisar</span>
+        <mat-icon class="icon2">
+            search
+        </mat-icon>
+    </a>
+    <a (click)="reset()" style="cursor: pointer;" >
+        <i class="funcao2">Limpar</i> 
+        <mat-icon class="icon2">
+            cleaning_services
+        </mat-icon>
+    </a>
+    <a routerLink="/incluir">
+        <i class="funcao2" >Novo Sistema</i> 
+        <mat-icon class="icon2">
+            note_add
+        </mat-icon>
+    </a>
+</mat-toolbar>
+

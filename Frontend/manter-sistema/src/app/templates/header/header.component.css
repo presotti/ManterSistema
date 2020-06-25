@@ -1,0 +1,15 @@
+.header{
+    background-color: lightgray;
+    display: flex;
+    justify-content: space-between;
+    height: 35px ;
+}
+
+.titulo{
+    color: dimgray;
+}
+
+.obrigatorio{
+    font-size: small;
+    color: red;
+}
